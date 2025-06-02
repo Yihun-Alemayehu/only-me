@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-inter text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-900 transition-colors duration-200;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium text-gray-900 dark:text-gray-100;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-title {
+    @apply text-3xl font-semibold mb-2 relative inline-block;
+  }
+  
+  .section-subtitle {
+    @apply text-sm text-blue-600 dark:text-blue-400 font-medium uppercase tracking-wider mb-4;
+  }
+  
+  .section-title-underline::after {
+    content: "";
+    @apply absolute left-0 -bottom-2 w-16 h-1 bg-blue-600 dark:bg-blue-400 rounded;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 
+    text-white font-medium py-2 px-6 rounded-md transition-all duration-300 
+    inline-flex items-center justify-center;
+  }
+  
+  .btn-secondary {
+    @apply bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 
+    text-gray-800 dark:text-gray-200 border border-gray-300 dark:border-gray-600 
+    font-medium py-2 px-6 rounded-md transition-all duration-300 
+    inline-flex items-center justify-center;
+  }
+  
+  .nav-link {
+    @apply text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 
+    transition-colors duration-300 relative py-2;
+  }
+  
+  .nav-link::after {
+    content: "";
+    @apply absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all duration-300;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+  
+  .nav-link.active {
+    @apply text-blue-600 dark:text-blue-400;
+  }
+  
+  .nav-link.active::after {
+    @apply w-full;
+  }
+  
+  .fade-in {
+    @apply opacity-0 translate-y-8;
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  .fade-in-delay-1 {
+    animation-delay: 0.2s;
+  }
+  
+  .fade-in-delay-2 {
+    animation-delay: 0.4s;
+  }
+  
+  .fade-in-delay-3 {
+    animation-delay: 0.6s;
+  }
+  
+  .fade-in-delay-4 {
+    animation-delay: 0.8s;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Skill bar animation */
+.skill-bar {
+  @apply relative h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden w-full;
+}
+
+.skill-progress {
+  @apply absolute top-0 left-0 h-full bg-blue-600 dark:bg-blue-400 rounded-full;
+  animation: skillProgress 1.5s ease-out forwards;
+  width: 0;
+}
+
+@keyframes skillProgress {
+  to {
+    width: var(--percent);
+  }
+}
+
+/* Project card hover effect */
+.project-card {
+  @apply transition-all duration-300 rounded-lg overflow-hidden 
+  bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700;
+}
+
+.project-card:hover {
+  @apply transform -translate-y-2 shadow-md dark:shadow-gray-800/30;
+}
+
+.project-card img {
+  @apply transition-transform duration-500;
+}
+
+.project-card:hover img {
+  @apply transform scale-105;
+}
+
+/* Service card hover effect */
+.service-card {
+  @apply transition-all duration-300 rounded-lg bg-white dark:bg-gray-800 
+  p-6 h-full border border-gray-100 dark:border-gray-700;
+}
+
+.service-card:hover {
+  @apply shadow-md dark:shadow-gray-800/30 border-transparent;
+}
+
+.service-card-icon {
+  @apply mb-4 text-blue-600 dark:text-blue-400 transition-all duration-300;
+}
+
+.service-card:hover .service-card-icon {
+  @apply transform scale-110;
+}
