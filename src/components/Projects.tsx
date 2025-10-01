@@ -24,17 +24,17 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: "Guadaye Home Rent Mobile App",
-    description: "Guadaye is a cutting-edge mobile app that revolutionizes the home rental process. The app simplifies the complicated process of finding, viewing, and managing apartment-like accommodations by providing intuitive tools.",
-    image: guadaye,
-    link: "https://github.com/Yihun-Alemayehu/Guadaye-RentHub"
-  },
-  {
-    id: 3,
     title: "Resume Builder Mobile App",
     description: "Resume Builder is a user-friendly mobile app that helps users create professional resumes quickly and easily. With customizable templates, intuitive editing tools, and export options, this app simplifies the resume creation process for job seekers.",
     image: resumeBuilder,
     link: "https://github.com/Yihun-Alemayehu/Resume-builder"
+  },
+  {
+    id: 3,
+    title: "Guadaye Home Rent Mobile App",
+    description: "Guadaye is a cutting-edge mobile app that revolutionizes the home rental process. The app simplifies the complicated process of finding, viewing, and managing apartment-like accommodations by providing intuitive tools.",
+    image: guadaye,
+    link: "https://github.com/Yihun-Alemayehu/Guadaye-RentHub"
   },
   {
     id: 4,
