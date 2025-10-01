@@ -1,0 +1,23 @@
+name: Deploy Portfolio
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy to server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: terauser
+          key: ${{ secrets.DEPLOY_KEY }}
+          port: 22
+          script: |
+            /var/www/only-me/deploy.sh
