@@ -1,6 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import profilePic from '../assets/images/yihun-alemayehu.jpg';
-import resume from '../assets/cv/Yihun-Alemayehu-resume.pdf';
+import resume from '../assets/cv/Yihun-Alemayehu-resume-genl-01.pdf';
 
 const About = () => {
   return (
